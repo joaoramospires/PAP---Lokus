@@ -112,7 +112,7 @@ a {
   
   /* Quando o rato passa por cima */
   .menu-item:hover {
-    background: #E8D5B5;
+    background: #5D5A6D;
     color: #141223;
   }
   .menu-item:nth-child(3) {
