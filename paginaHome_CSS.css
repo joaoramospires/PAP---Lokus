@@ -5,17 +5,17 @@ body{
 
 /*Serve para defenir o tamanho e o local do mapa temporario, o #é para o id do DIV */
 #elementoNaTelaCheia {
-    width: 98.8vw; /* Alterado para 99vw para garantir 99% da largura da tela */
-    height: 90.5vh;
+    width: 96vw;
+    height: 92vh;
     overflow: hidden;
-    /*Fazer o mapa ficar fixo*/
-    top: 10%;
-    left: 0.5%;
+    top: 7%; /* Ajusta a posição para baixo para cobrir o mapa */
+    left: 1.9%;
     position: fixed;
-    margin-top: -3%;
-    outline: 7px solid #141223;
-    border-radius: 2px;
-    padding: 1px;
+    margin-top: -1.5vw; 
+    outline: 15px solid #141223;
+    border-radius: 1px;
+    padding: 2px;
+    border-top: 20px solid #141223; /* Aumenta a largura da borda superior */
 }
 
 
@@ -113,7 +113,7 @@ a {
   /* Quando o rato passa por cima */
   .menu-item:hover {
     background: #5D5A6D;
-    color: #141223;
+    color: #ffffff;
   }
   .menu-item:nth-child(3) {
     transition-duration: 180ms;
