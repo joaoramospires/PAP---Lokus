@@ -11,11 +11,11 @@ body{
     top: 7%; /* Ajusta a posição para baixo para cobrir o mapa */
     left: 1.9%;
     position: fixed;
-    margin-top: -1.5vw; 
+    margin-top: -1.3vw; 
     outline: 15px solid #141223;
-    border-radius: 1px;
+    border-radius: 9px;
     padding: 2px;
-    border-top: 20px solid #141223; /* Aumenta a largura da borda superior */
+    /*border-top: 20px solid #141223; /* Aumenta a largura da borda superior */
 }
 
 
