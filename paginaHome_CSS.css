@@ -1,6 +1,10 @@
 
 body{
     background-color: #ffffff;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none; /* Não-prefixed version, Chrome and Opera */
 }
 
 /*Serve para defenir o tamanho e o local do mapa temporario, o #é para o id do DIV */
@@ -12,156 +16,166 @@ body{
     left: 1.9%;
     position: fixed;
     margin-top: -1.3vw; 
-    outline: 15px solid #141223;
+    outline: 10px solid #141223;
     border-radius: 9px;
     padding: 2px;
-    /*border-top: 20px solid #141223; /* Aumenta a largura da borda superior */
+}
+
+.lin {
+  height: 1px;
+  background-color:#141223; /* Adicione a cor desejada */
+  border-radius: 2vw; /* Ajuste o raio desejado para pontas arredondadas */
+  border-style: solid;
+  border-width: 2px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 27vw;
+
+
+}
+
+/* -------------------- Definir o Botão Grudento --------------------*/
+a {
+  color: inherit;
+}
+
+h1, h2, h3, h4 {
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 
 
-/* -------------------- Definir o Botão Grudento --------------------*/
-a {
-    color: inherit;
-  }
-  
-  h1, h2, h3, h4 {
-    margin-bottom: 10px;
-    margin-top: 10px;
-  }
-  
-  
-  
-  .menu {
-    filter: url("#goo");
-    margin-top: 20vw;
-  }
-  
-  /*Aterar os botões que aparecem depois de clicar no botão Menu*/
-  .menu-item, .menu-open-button {
-    background: #141223;
-    border-radius: 100%;
-    width: 30%;/* 80px diâmetro*/ 
-    height: 30%;/* 80px altura*/
-    margin-left: -100px;
-    position: absolute;
-    top: 70%;
-    color: white;
-    text-align: center;
-    line-height: 65px;
-    transform: translate3d(0, 0, 0);
-    transition: transform ease-out 200ms;
-    margin-top: 100px
-  }
-  
-  .menu-open {
-    display: none;
-  
-  }
-  
-  .hamburger {
-    width: 25px;
-    height: 3px;
-    background: white;
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-left: -12.5px;
-    margin-top: -1.5px;
-    transition: transform 200ms;
-  }
-  
-  
-  /*Transformação do Hamburguer quando clico nele*/
-  .hamburger-1 {
-    transform: translate3d(0, -8px, 0);
-  }
-  /*Esse do meio vai sumir*/
-  .hamburger-2 {
-    transform: translate3d(0, 0, 0);
-  }
-  .hamburger-3 {
-    transform: translate3d(0, 8px, 0);
-  }
-  .menu-open:checked + .menu-open-button .hamburger-1 {
-    transform: translate3d(0, 0, 0) rotate(45deg);
-  }
-  .menu-open:checked + .menu-open-button .hamburger-2 {
-    transform: translate3d(0, 0, 0) scale(0.1, 1);
-  }
-  .menu-open:checked + .menu-open-button .hamburger-3 {
-    transform: translate3d(0, 0, 0) rotate(-45deg);
-  }
-  
-  
-  
-  .menu {
-    position: absolute;
-    left: 50%;
-    margin-left: -190px;
-    padding-top: 20px;
-    padding-left: 190px;
-    width: 380px;
-    height: 250px;
-    box-sizing: border-box;
-    /*Tamanho das letras*/
-    font-size: 20px;
-    text-align: left;
-  }
-  
-  /* Quando o rato passa por cima */
-  .menu-item:hover {
-    background: #5D5A6D;
-    color: #ffffff;
-  }
-  .menu-item:nth-child(3) {
-    transition-duration: 180ms;
-  }
-  .menu-item:nth-child(4) {
-    transition-duration: 180ms;
-  }
-  .menu-item:nth-child(8) {
-    transition-duration: 180ms;
-  }
-  
-  
-  .menu-open-button {
-    z-index: 2;
-    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    transition-duration: 500ms;
-    transform: scale(1.1, 1.1) translate3d(0, 0, 0);
-    cursor: pointer;
-  }
-  
-  /* Tamanho do botão quando o rato passar por ele*/
-  .menu-open-button:hover {
-    transform: scale(1.2, 1.2) translate3d(0, 0, 0);
-  }
-  
-  .menu-open:checked + .menu-open-button {
-    transition-timing-function: linear;
-    transition-duration: 200ms;
-    /* Distância do botão principal com os outros*/
-    transform: scale(0.95, 0.95) translate3d(0, 0, 0);
-  }
-  
-  .menu-open:checked ~ .menu-item {
-    transition-timing-function: cubic-bezier(0.935, 0, 0.35, 1.33);
-  }
-  .menu-open:checked ~ .menu-item:nth-child(3) {
-    transition-duration: 680ms;
-      /* Distância do botão meio com os outros. 
-      O primeiro px é a ditância horizontal e a outra é a vertical*/
-    transform: translate3d(0.08361px, -100px, 0);
-  }
-  .menu-open:checked ~ .menu-item:nth-child(4) {
-    transition-duration: 680ms;
-    transform: translate3d(90.9466px, -52.47586px, 0);
-  }
-  
-  .menu-open:checked ~ .menu-item:nth-child(8) {
-    transition-duration: 680ms;
-    transform: translate3d(-91.03006px, -52.33095px, 0);
-  }
-  
+.menu {
+  filter: url("#goo");
+  margin-top: 20vw;
+}
+
+/*Aterar os botões que aparecem depois de clicar no botão Menu*/
+.menu-item, .menu-open-button {
+  background: #141223;
+  border-radius: 100%;
+  width: 27%;/* 80px diâmetro*/ 
+  height: 27%;/* 80px altura*/
+  margin-left: -180px;
+  position: absolute;
+  top: 65%;
+  color: white;
+  text-align: center;
+  line-height: 63px;
+  transform: translate3d(0, 0, 0);
+  transition: transform ease-out 200ms;
+  margin-top: 10vw
+}
+
+.menu-open {
+  display: none;
+  cursor: pointer;
+}
+
+.hamburger {
+  width: 25px;
+  height: 3px;
+  background: white;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -12.5px;
+  margin-top: -1.5px;
+  transition: transform 200ms;
+}
+
+
+/*Transformação do Hamburguer quando clico nele*/
+.hamburger-1 {
+  transform: translate3d(0, -8px, 0);
+}
+/*Esse do meio vai sumir*/
+.hamburger-2 {
+  transform: translate3d(0, 0, 0);
+}
+.hamburger-3 {
+  transform: translate3d(0, 8px, 0);
+}
+
+.menu-open:checked + .menu-open-button .hamburger-1 {
+  transform: translate3d(0, 0, 0) rotate(45deg);
+}
+.menu-open:checked + .menu-open-button .hamburger-2 {
+  transform: translate3d(0, 0, 0) scale(0.1, 1);
+}
+.menu-open:checked + .menu-open-button .hamburger-3 {
+  transform: translate3d(0, 0, 0) rotate(-45deg);
+}
+
+
+
+.menu {
+  position: absolute;
+  left: 50%;
+  margin-left: -90px;
+  padding-top: 20px;
+  padding-left: 190px;
+  width: 380px;
+  height: 250px;
+  box-sizing: border-box;
+  /*Tamanho das letras*/
+  font-size: 18px;
+  text-align: left;
+}
+
+/* Quando o rato passa por cima */
+.menu-item:hover {
+  background: #FFFADE;
+  color: #141223;
+}
+.menu-item:nth-child(3) {
+  transition-duration: 180ms;
+}
+.menu-item:nth-child(4) {
+  transition-duration: 180ms;
+}
+.menu-item:nth-child(8) {
+  transition-duration: 180ms;
+}
+
+
+.menu-open-button {
+  z-index: 2;
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition-duration: 500ms;
+  transform: scale(1.1, 1.1) translate3d(0, 0, 0);
+  cursor: pointer;
+}
+
+/* Tamanho do botão quando o rato passar por ele*/
+.menu-open-button:hover {
+  transform: scale(1, 1) translate3d(0, 0, 0);
+}
+
+.menu-open:checked + .menu-open-button {
+  transition-timing-function: linear;
+  transition-duration: 200ms;
+  /* Distância do botão principal com os outros*/
+  transform: scale(0.95, 0.95) translate3d(0, 0, 0);
+}
+
+.menu-open:checked ~ .menu-item {
+  transition-timing-function: cubic-bezier(0.935, 0, 0.35, 1.33);
+}
+.menu-open:checked ~ .menu-item:nth-child(3) {/*PARAGENS*/
+  transition-duration: 680ms;
+    /* Distância do botão meio com os outros. 
+    O primeiro px é a ditância horizontal e a outra é a vertical*/
+  transform: translate3d(0.1px, -100px, 0);
+}
+.menu-open:checked ~ .menu-item:nth-child(4) {/*FAVORITOS*/
+  transition-duration: 680ms;
+  transform: translate3d(80px, -52px, 0);
+}
+
+.menu-open:checked ~ .menu-item:nth-child(8) {/*AUTO CARROS*/
+  transition-duration: 680ms;
+  transform: translate3d(-80px, -52px, 0);
+}
