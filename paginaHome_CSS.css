@@ -70,7 +70,6 @@ h1, h2, h3, h4 {
 
 .menu-open {
   display: none;
-  cursor: pointer;
 }
 
 .hamburger {
@@ -123,6 +122,8 @@ h1, h2, h3, h4 {
   /*Tamanho das letras*/
   font-size: 18px;
   text-align: left;
+  cursor: pointer;
+
 }
 
 /* Quando o rato passa por cima */
@@ -143,6 +144,7 @@ h1, h2, h3, h4 {
 
 .menu-open-button {
   z-index: 2;
+  /*o segundo número é para aumentar o tamanho do botão quando o rato passa por cima*/
   transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transition-duration: 500ms;
   transform: scale(1.1, 1.1) translate3d(0, 0, 0);
@@ -155,20 +157,22 @@ h1, h2, h3, h4 {
 }
 
 .menu-open:checked + .menu-open-button {
+
   transition-timing-function: linear;
   transition-duration: 200ms;
+
   /* Distância do botão principal com os outros*/
   transform: scale(0.95, 0.95) translate3d(0, 0, 0);
 }
 
 .menu-open:checked ~ .menu-item {
-  transition-timing-function: cubic-bezier(0.935, 0, 0.35, 1.33);
+  transition-timing-function: cubic-bezier(2, 0, 0.35, 1.33);
 }
 .menu-open:checked ~ .menu-item:nth-child(3) {/*PARAGENS*/
   transition-duration: 680ms;
     /* Distância do botão meio com os outros. 
     O primeiro px é a ditância horizontal e a outra é a vertical*/
-  transform: translate3d(0.1px, -100px, 0);
+  transform: translate3d(-1px, -100px, 0);
 }
 .menu-open:checked ~ .menu-item:nth-child(4) {/*FAVORITOS*/
   transition-duration: 680ms;
