@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home</title>
+    <link rel="icon" href="Logo Fundo Circulo.png" type="image/png">
     
     <link rel="stylesheet" href="paginaHome_CSS.css">
 
@@ -18,8 +19,10 @@
             src="https://maps.google.com/maps?width=720&amp;height=600&amp;hl=pt&amp;q=38.875294193871895,%20-9.05800759792328+(Escola)&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></a>
         </iframe>
     </div>
-    <!--Linha que delimita o mapa-->
-    <div class="linha"></div>
+    <!--Linha que delimita o mapa <div class="linha"></div> -->
+
+
+    
     
     <br>
     
@@ -72,6 +75,27 @@
         </defs>
     </svg>
 
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script >
+        
+        function searchToggle(obj, evt)
+        {
+            var container = $(obj).closest('.search-wrapper');
+            
+            if(!container.hasClass('active'))
+            {
+                container.addClass('active');
+                evt.preventDefault();
+            }
+            else if(container.hasClass('active') && $(obj).closest('.input-holder').length == 0)
+            {
+                container.removeClass('active');
+                // clear input
+                container.find('.search-input').val('');
+            }
+        }
+    </script>
 
 </body>
 </html>
