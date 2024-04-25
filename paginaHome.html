@@ -26,28 +26,22 @@
     
     <br>
     
+    <div class="nav">
+        <input type="checkbox">
+        
+            <span></span>
+            <span></span>
+            
+            <div class="menu">
+                <li><a href="#">Auto-Carros </a></li>
+                <li><a href="#">Paragens</a></li>
+                <li><a href="#">Favoritos</a></li>
+                
+            </div>
+    </div>
 
     
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script >
-        
-        function searchToggle(obj, evt)
-        {
-            var container = $(obj).closest('.search-wrapper');
-            
-            if(!container.hasClass('active'))
-            {
-                container.addClass('active');
-                evt.preventDefault();
-            }
-            else if(container.hasClass('active') && $(obj).closest('.input-holder').length == 0)
-            {
-                container.removeClass('active');
-                // clear input
-                container.find('.search-input').val('');
-            }
-        }
-    </script>
+    
 
 </body>
 </html>
