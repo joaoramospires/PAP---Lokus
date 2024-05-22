@@ -1,7 +1,150 @@
 body {
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    background: #ECECEC;
-    font-family: 'Open Sans', Verdana, Geneva, Tahoma, sans-serif;
-  }
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: #ECECEC;
+  font-family: 'Open Sans', Verdana, Geneva, Tahoma, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*----------------------------------------------- Botão de voltar --------------------------------------------------------*/
+
+button {
+  color: #090909;
+  height: 3vw;
+  width: 6vw;
+  padding: 0.7em 1.7em;
+  font-size: 10vw;
+  border-radius: 0.5em;
+  background: #e8e8e8;
+  cursor: pointer;
+  border: 1px solid #e8e8e8;
+  transition: all 0.3s;
+  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #fff;
+}
+
+button:active {
+  color: #666;
+  box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #fff;
+}
+
+/**/
+#btnVoltar{
+  margin-top: -42vw;
+  margin-right: -90vw;
+  position: absolute;
+}
+
+
+#btnAvancar{
+  margin-top: -42vw;
+  margin-left: -90vw;
+  position: absolute;
+}
+
+
+
+/*------------------------------------------------ Cards Buttons ---------------------------------------------------------*/
+
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  margin-bottom: 20px;  
+}
+
+.card {
+  width: 280px;
+  height: 150px;
+  left: -2vw;
+  border-radius: 15px;
+  box-shadow: rgb(0, 0, 0, 0.7) 5px 10px 50px, rgb(0, 0, 0, 0.7) -5px 0px 250px;
+  display: flex;
+  color: white;
+  justify-content: center;
+  position: relative;
+  flex-direction: column;
+  background: linear-gradient(to right, rgb(20, 30, 48), rgb(36, 59, 85));
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  overflow-x: auto;
+}
+
+.card:hover{
+  font-size: 23px;
+  width: 300px;
+  height: 170px;
+  background: rgb(17, 4, 134);
+  border-radius: 15px;
+  box-shadow: rgb(0, 0, 0) 5px 10px 50px, rgb(0, 0, 0) -5px 0px 250px;
+  display: flex;
+  color: white;
+  justify-content: center;
+  position: relative;
+  flex-direction: column;
+  background: linear-gradient(to right, rgb(20, 30, 48), rgb(36, 59, 85));
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  overflow-x: auto;
+}
+
+.time-text {
+  font-size: 45px;
+  margin-top: 0px;
+  margin-left: 15px;
+  font-weight: 700;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.time-sub-text {
+  font-size: 15px;
+  margin-left: 5px;
+}
+
+.day-text {
+  font-size: 18px;
+  margin-top: 0px;
+  margin-left: 15px;
+  font-weight: 500;
+  font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS", "sans-serif";
+}
+
+/*Forte --> Areeiro*/
+.car{
+  max-width: 100%;
+  width: 220px;
+  left: 47vw;
+  top: 12vw;
+  position: fixed;
+  transition: all 0.3s ease-in-out;
+}
+.card:hover .car{
+  width: 245px;
+  right: 37vw;
+  top: 12vw;
+  position:fixed;
+  transition: all 0.3s ease-in-out;
+  z-index: 2;
+}
+
+/*Areeiro --> Forte*/
+.car2{
+  max-width: 100%;
+  width: 220px;
+  left: 47vw;
+  top: 23vw;
+  position: fixed;
+  transition: all 0.3s ease-in-out;
+}
+.card:hover .car2{
+  width: 245px;
+  right: 37vw;
+  top: 23vw;
+  position:fixed;
+  transition: all 0.3s ease-in-out;
+  z-index: 2;
+}
