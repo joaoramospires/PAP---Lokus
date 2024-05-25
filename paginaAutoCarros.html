@@ -13,11 +13,11 @@
 <body>
 
     <!--Botão de Voltar e Botão de Avançar-->
-    <button id="btnAvancar">
+    <button id="btnAvancar" >
         <img src="voltarPreenchido.jpg" alt="Voltar" style="width:2.5vw; height:2.5vw; margin-left: 1.5vw;">
     </button>
 
-    <button id="btnVoltar">
+    <button id="btnVoltar" hidden>
         <img src="avancarPreenchido.jpg" alt="Voltar" style="width:2.5vw; height:2.5vw; margin-left: 1.5vw;">
     </button>
 
@@ -37,31 +37,32 @@
             
         </div>
 
-                <br>
+        <br>
 
-                <div class="card">
-                    <p class="time-text">
-                        <span>2790</span>
-                    </p>
-                    <p class="day-text">Areeiro ➡ Forte da Casa</p>
+            <div class="card">
+                <p class="time-text">
+                    <span>2790</span>
+                </p>
+
+                <p class="day-text">Areeiro ➡ Forte da Casa</p>
         
-                    <div class= "car2">
-                        <img src="saiDoFor_to_Arre2.png">
-                    </div>
-                    
+                <div class= "car2">
+                    <img src="saiDoFor_to_Arre2.png">
                 </div>
+            </div>
 
     </div>
 
+    <!-- Me redireciona para a página principal -->
+    <script>
+        function redirecionar() {
+            window.location.href = 'paginaHome.html';
+        }
 
-
-
-
-
-
-
-
-
+        window.onload = function() {
+            document.getElementById('btnAvancar').addEventListener('click', redirecionar);
+        };
+    </script>
 
 </body>
 </html>
