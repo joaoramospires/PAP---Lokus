@@ -12,20 +12,26 @@ body{
     user-select: none; /* Não-prefixed version, Chrome and Opera */
 }
 
-/*Serve para defenir o tamanho e o local do mapa temporario, o #é para o id do DIV */
-#elementoNaTelaCheia {
-    width: 96vw;
-    height: 92vh;
-    overflow: hidden;
-    top: 7%; /* Ajusta a posição para baixo para cobrir o mapa */
-    left: 1.9%;
-    position: fixed;
-    margin-top: -1.3vw; 
-    outline: 10px solid #141223;
-    border-radius: 9px;
-    box-shadow: 0px 10px 50px 10px #141223;
-    padding: 2px;
+.leaflet-marker-icon,
+.leaflet-marker-shadow {
+  display: none !important;
 }
+
+
+
+.mapa{
+  width: 96vw;
+  height: 23.5vw;
+  overflow: hidden;
+  top: 7%; /* Ajusta a posição para baixo para cobrir o mapa */
+  left: 1.9%;
+  position: fixed;
+  margin-top: -1.3vw; 
+  border-radius: 9px;
+  box-shadow: 0px 10px 50px 10px #141223;
+  padding: 2px;
+  
+  }
 
 .lin {
   height: 1px;

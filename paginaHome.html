@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-PT">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,24 +8,17 @@
     
     <link rel="stylesheet" href="paginaHome_CSS.css">
 
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
 </head>
 <body>
 
     
-    <!-- Colocar um mapa e uma página de carregamento <img src="Logo Finalizado (sem fundo).png"> AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->
-    <div id="elementoNaTelaCheia" style="height: 50vh ; ">
-        <!--Largura-->   <!--Altura-->
-        <iframe width= 100% height= 100% frameborder="0" scrolling="yes" marginheight="0" marginwidth="0" 
-            src="https://maps.google.com/maps?width=720&amp;height=600&amp;hl=pt&amp;q=38.875294193871895,%20-9.05800759792328+(Escola)&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></a>
-        </iframe>
-    </div>
-    <!--Linha que delimita o mapa <div class="linha"></div> -->
+    <!-- Colocar uma página de carregamento <img src="Logo Finalizado (sem fundo).png"> -->
+    <div class="mapa" id="map" ></div>
 
-
-    
-    
-    <br>
-    
+    <!-- Botões -->
     <div class="nav">
         <input type="checkbox">
         
@@ -40,7 +33,15 @@
             </div>
     </div>
 
-    
+
+    <script>
+        var map = L.map('map').setView([38.875309, -9.058013], 15);
+
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+        
+    </script>
     
 
 </body>
