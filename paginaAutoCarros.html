@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="paginaAutoCarros_CSS.css">
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 
+    <!-- Links para pegar os dados para o mapa -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
 </head>
 <body>
 
@@ -22,36 +26,47 @@
     </button>
 
 
-    <!-- Cards dos Autocarros -->
-    <div class="cards-container">
+    <!-- Cards dos Auto-Carros -->
+    <div class="cards-container" id = "allCard" style="display:block;">
 
-        <div class="card">
+        <div class="card" id="cardIda">
             <p class="numero">
                 <span>2790</span>
             </p>
             <p class="texto">Forte da Casa ➡ Areeiro</p>
-
-            <div class= "car">
+            <div class="car">
                 <img src="saiDoFor_to_Arre2.png">
             </div>
-            
         </div>
-
-        <br>
-
-            <div class="card">
-                <p class="numero">
-                    <span>2790</span>
-                </p>
-
-                <p class="texto">Areeiro ➡ Forte da Casa</p>
         
-                <div class= "car2">
-                    <img src="saiDoFor_to_Arre2.png">
-                </div>
+        <br>
+        
+        <div class="card" id="cardVolta">
+            <p class="numero">
+                <span>2790</span>
+            </p>
+            
+            <p class="texto">Areeiro ➡ Forte da Casa</p>
+            
+            <div class="car2">
+                <img src="saiDoFor_to_Arre2.png">
             </div>
-
+        </div>
     </div>
+
+    <!-- Mapa do Forte da Casa para o Areeiro-->
+    <div id="mapTitulo">
+        <div class="mapa" id="map"></div>
+        <div class="titulo"> Forte da Casa ➡ Areeiro </div>
+    </div>
+    
+        <!-- Mapa do Areeiro para o Forte da Casa -->
+    <div id="mapTitulo2">
+        <div class="mapa" id="map2" ></div>
+        <div class="titulo"> Areeiro ➡ Forte da Casa </div>
+    </div>
+
+
 
     <!-- Me redireciona para a página principal -->
     <script>
@@ -62,6 +77,65 @@
         window.onload = function() {
             document.getElementById('btnAvancar').addEventListener('click', redirecionar);
         };
+
+        /*-----------------------------------------------------------------------------------------------------------------*/
+        
+        /* Criação e Validação do mapa -- Mapa do Forte da Casa para o Areeiro*/
+        var map = L.map('map').setView([38.875309, -9.058013], 16);
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+        
+        /* Mapa do Areeiro para o Forte da Casa*/
+        var map2 = L.map('map2').setView([38.875309, -9.058013], 16);
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map2);
+        
+        /*-----------------------------------------------------------------------------------------------------------------*/
+
+            /*Tentar criar uma div para o mapa, ver o porque não aparece o titulo e porque o mapa não aparece por inteiro.*/
+
+        /* 1º Elementos */
+        const allCard = document.getElementById('allCard')
+
+        const cardIda = document.getElementById('cardIda');
+        const btnForteAreerio = document.getElementById('mapTitulo');
+        
+        /* Adiciono um evento aos botões*/
+        cardIda.addEventListener('click', function() {
+            /* Deixa o card intero invisivel */
+            allCard.style.display = 'none';
+
+            /*Mostra os dados associados ao botão */
+            btnForteAreerio.style.display = 'block';
+            map.invalidateSize();
+        });
+
+        /* 2º Elementos */
+        const cardVolta = document.getElementById('cardVolta');
+        const btnAreerioForte = document.getElementById('mapTitulo2');
+        
+        cardVolta.addEventListener('click', function(){
+            /* Deixa o card intero invisivel */
+            allCard.style.display = 'none';
+            /*Mostra os dados associados ao botão */
+            btnAreerioForte.style.display = 'block'
+
+            map2.invalidateSize();
+        });
+
+        /* Ativar os elemntos após voltar ------------------------------- */
+        const btnAvancar = document.getElementById('btnAvancar');
+
+        btnAvancar.addEventListener('click', function (){
+
+            btnForteAreerio.style.display='none';
+            btnAreerioForte.style.display='none';
+
+            allCard.style.display='block';
+        });
+
     </script>
 
 </body>

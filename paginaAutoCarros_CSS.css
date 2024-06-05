@@ -7,6 +7,54 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none; /* Não-prefixed version, Chrome and Opera */
+}
+
+
+/*----------------------------------------------- Mapa e Titulos --------------------------------------------------------*/
+
+.leaflet-marker-icon,
+.leaflet-marker-shadow {
+display: none !important;
+}
+
+
+.mapa{
+width: 45vw;
+height: 42.5vw;
+overflow: hidden;
+top: 7%; /* Ajusta a posição para baixo para cobrir o mapa */
+left: 52.5vw;
+position: fixed;
+margin-top: -1.3vw; 
+border-radius: 9px;
+box-shadow: 0px 10px 50px 10px #141223;
+padding: 2px;
+}
+
+.titulo{
+font-size: 30px;
+margin-top: -22vw;
+margin-left: -37vw;
+font-weight: 700;
+font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+position: fixed;
+}
+
+p{
+margin-left: 10vw;
+}
+
+#mapTitulo{
+display: none;
+}
+
+#mapTitulo2{
+display: none;
 }
 
 /*----------------------------------------------- Botão de voltar --------------------------------------------------------*/
