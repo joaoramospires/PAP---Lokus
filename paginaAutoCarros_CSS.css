@@ -103,7 +103,7 @@ button:active {
   margin-bottom: 20px;  
 }
 
-.card {
+.card2 {
   width: 280px;
   height: 150px;
   left: -2vw;
@@ -121,7 +121,7 @@ button:active {
   overflow-x: auto;
 }
 
-.card:hover{
+.card2:hover{
   font-size: 23px;
   width: 300px;
   height: 170px;
@@ -166,7 +166,7 @@ button:active {
   position: fixed;
   transition: all 0.3s ease-in-out;
 }
-.card:hover .car{
+.card2:hover .car{
   width: 245px;
   right: 37vw;
   top: 12vw;
@@ -184,7 +184,7 @@ button:active {
   position: fixed;
   transition: all 0.3s ease-in-out;
 }
-.card:hover .car2{
+.card2:hover .car2{
   width: 245px;
   right: 37vw;
   top: 23vw;
