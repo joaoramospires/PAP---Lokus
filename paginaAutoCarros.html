@@ -656,13 +656,7 @@
     <!-- Me redireciona para a página principal -->
     <script>
 
-        function redirecionar() {
-            window.location.href = 'paginaHome.html';
-        }
-
-        window.onload = function() {
-            document.getElementById('btnAvancar').addEventListener('click', redirecionar);
-        };
+        
         /*-----------------------------------------------------------------------------------------------------------------*/
         
         /* Criação e Validação do mapa -- Mapa do Forte da Casa para o Areeiro*/
@@ -720,14 +714,21 @@
         /* ------------------------- Ativar os elementos após voltar ------------------------------- */
         const btnAvancar = document.getElementById('btnAvancar');
 
-        btnAvancar.addEventListener('click', function (){
-
-            btnForteAreerio.style.display='none';
-            btnAreerioForte.style.display='none';
-            linhaTempo.style.display='none';
-            linhaTempo2.style.display='none'
-
-            allCard.style.display='block';
+        btnAvancar.addEventListener('click', function() {
+            if (allCard.style.display === 'none') {
+                //Apagou tudo
+                btnForteAreerio.style.display = 'none';
+                btnAreerioForte.style.display = 'none';
+                linhaTempo.style.display = 'none';
+                linhaTempo2.style.display = 'none';
+                //Mostro somente os cards
+                allCard.style.display = 'block';
+            } 
+            else 
+            {
+                /*Vai paar a página principal*/
+                window.location.href = 'paginaHome.html';
+            }
         });
 
     </script>
