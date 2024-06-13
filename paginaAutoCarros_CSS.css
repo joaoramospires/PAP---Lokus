@@ -14,6 +14,114 @@ body {
   user-select: none; /* Não-prefixed version, Chrome and Opera */
 }
 
+/*-------------------------------------------- TimeLine Autocarros ------------------------------------------------------*/
+
+/* Container da linha do tempo */
+.timeline {
+  margin: -1vw auto;
+  padding: 1vw;
+  margin-top: 10vw;
+}
+
+.card {
+  position: relative;
+  margin-right: 50vw;
+  max-width: 20vw;
+}
+
+/* definindo o preenchimento com base em pares ou ímpares */
+.card:nth-child(odd) {
+  padding: 30px 0 30px 30px;
+}
+.card:nth-child(even) {
+  padding: 30px 30px 30px 0;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  width: 51%;
+  border: solid orangered;
+}
+
+.card:nth-child(odd)::before {
+  left: 0px;
+  top: -5px;
+  bottom: -5px;
+  border-width: 5px 0 5px 5px;
+  border-radius: 50px 0 0 50px;
+}
+
+/* Configurando a parte superior e inferior */
+@media only screen and (max-width: 400px) {
+  .card:nth-child(odd)::before {
+    top: -5px;
+    bottom: -5px;
+  }
+}
+
+/* Definir a borda superior, inferior e direita */
+.card:nth-child(even)::before {
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-width: 5px 5px 5px 0;
+  border-radius: 0 50px 50px 0;
+}
+
+.card:first-child::before {
+  border-top: 0;
+  border-top-left-radius: 100;
+}
+
+.card:last-child:nth-child(odd)::before {
+  border-bottom: 0;
+  border-bottom-left-radius: 100;
+}
+
+.card:last-child:nth-child(even)::before {
+  border-bottom: 0;
+  border-bottom-right-radius: 100;
+}
+
+/* Informação sobre a linha do tempo*/
+.info {
+  display: flex;
+  flex-direction: column;
+  background: #141223;
+  color: #ECECEC;
+  border-radius: 1vw;
+  padding: 10px;
+}
+
+.title {
+  color: orangered;
+  position: relative;
+}
+
+.title::before {
+  content: "";
+  position: absolute;
+  width: 1vw;
+  height: 1vw;
+  background: white;
+  border-radius: 10vw;
+  border: 3px solid orangered;
+}
+
+.card:nth-child(even) > .info > .title {
+  text-align: right;
+}
+
+.card:nth-child(odd) > .info > .title::before {
+  left: -46px;
+}
+
+.card:nth-child(even) > .info > .title::before {
+  right: -45px;
+}
+
+
 
 /*----------------------------------------------- Mapa e Titulos --------------------------------------------------------*/
 
@@ -37,12 +145,21 @@ padding: 2px;
 }
 
 .titulo{
-font-size: 30px;
-margin-top: -22vw;
-margin-left: -37vw;
-font-weight: 700;
-font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-position: fixed;
+  font-size: 30px;
+  margin-top: -170vw;
+  margin-left: 12vw;
+  font-weight: 700;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  position: absolute;
+}
+
+.titulo2{
+  font-size: 30px;
+  margin-top: -164vw;
+  margin-left: 12vw;
+  font-weight: 700;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  position: absolute;
 }
 
 p{
@@ -80,16 +197,16 @@ button:active {
 
 /**/
 #btnVoltar{
-  margin-top: -42vw;
+  margin-top: -52vw;
   margin-right: -90vw;
-  position: absolute;
+  position: fixed;
 }
 
 
 #btnAvancar{
-  margin-top: -42vw;
-  margin-left: -90vw;
-  position: absolute;
+  top: 1.5vw;
+  left: 1.5vw;
+  position: fixed;
 }
 
 
@@ -192,3 +309,5 @@ button:active {
   transition: all 0.3s ease-in-out;
   z-index: 2;
 }
+
+
