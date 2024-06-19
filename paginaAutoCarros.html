@@ -17,13 +17,10 @@
 <body>
 
     <!--Botão de Voltar e Botão de Avançar-->
-    <button id="btnAvancar" >
+    <button id="btnVoltar" >
         <img src="voltarPreenchido.jpg" alt="Voltar" style="width:2.5vw; height:2.5vw; margin-left: 1.5vw;">
     </button>
 
-    <button id="btnVoltar" hidden>
-        <img src="avancarPreenchido.jpg" alt="Voltar" style="width:2.5vw; height:2.5vw; margin-left: 1.5vw;">
-    </button>
 
 
     <!-- Cards dos Auto-Carros -->
@@ -708,7 +705,7 @@
         });
 
         /* ------------------------- Ativar os elementos após voltar ------------------------------- */
-        const btnAvancar = document.getElementById('btnAvancar');
+        const btnAvancar = document.getElementById('btnVoltar');
 
         btnAvancar.addEventListener('click', function() {
             if (allCard.style.display === 'none') {

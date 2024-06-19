@@ -195,20 +195,14 @@ button:active {
   box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #fff;
 }
 
-/**/
 #btnVoltar{
-  margin-top: -52vw;
-  margin-right: -90vw;
-  position: fixed;
-}
-
-
-#btnAvancar{
   top: 1.5vw;
   left: 1.5vw;
   position: fixed;
 }
-
+#btnVoltar:focus{
+  outline: none; /* Remover contorno */
+}
 
 
 /*------------------------------------------------ Cards Buttons ---------------------------------------------------------*/
