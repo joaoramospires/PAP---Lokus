@@ -1,3 +1,20 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: #ECECEC;
+  font-family: 'Open Sans', Verdana, Geneva, Tahoma, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none; /* Não-prefixed version, Chrome and Opera */
+}
+/*---------------------------------------- MAPA ----------------------------------------*/
 .leaflet-marker-icon,
 .leaflet-marker-shadow {
 display: block !important;
@@ -31,3 +48,188 @@ p{
 margin-left: 10vw;
 }
 
+/*---------------------------------------- Botão de Procura ----------------------------------------*/
+.button {
+	width: 18vw;
+	height: 4vw;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 10px;
+	background-color: #acacac;
+	border-radius: 30px;
+	color: rgb(19, 19, 19);
+	font-weight: 900;
+	font-size: 19px;
+	position: relative;
+	cursor: pointer;
+	transition-duration: .2s;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.116);
+	padding-left: 8px;
+	transition-duration: .5s;
+	margin-right: 55vw;
+	margin-bottom: 25vw;
+	border: none;
+    outline: none;
+}
+
+.button:focus {
+    outline: none; /* Remover contorno */
+}
+
+.svgIcon {
+	height: 3vw;
+	transition-duration: 1.5s;
+}
+
+.bell path {
+	fill: rgb(19, 19, 19);
+}
+
+.button:hover {
+	background-color: #dcdcdc;
+	transition-duration: .5s;
+}
+
+.button:active {
+	transform: scale(0.97);
+	transition-duration: .2s;
+}
+
+.button:hover .svgIcon {
+	transform: rotate(250deg);
+	transition-duration: 1.5s;
+}
+
+
+
+
+
+
+
+/*---------------------------------------- TABELA ----------------------------------------*/
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100);
+
+
+
+.table-title {
+	display: block;
+	max-width: 600px;
+	padding: 5px;
+	width: 100%;
+}
+
+.table-fill {
+	background: #ECECEC;
+	border-collapse:separate;
+	height: 320px;
+	max-width: 600px;
+	padding: 5px;
+	width: 100%;
+	box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+	animation: float 5s infinite;
+	border-radius: 5px;
+  margin-top: 10vw;
+  margin-right: 55vw;
+  position: fixed;
+}
+
+th {
+	color: #d5dde5;
+	background: #1b1e24;
+	border-bottom: 4px solid #9ea7af;
+	border-right: 1px solid #343a45;
+	font-size: 23px;
+	font-weight: 100;
+	padding: 24px;
+	text-align: left;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+	vertical-align: middle;
+}
+
+th:first-child {
+	border-top-left-radius: 3px;
+}
+
+th:last-child {
+	border-top-right-radius: 3px;
+	border-right: none;
+}
+
+tr {
+	border-top: 1px solid #c1c3d1;
+	border-bottom: 1px solid #c1c3d1;
+	color: #666b85;
+	font-size: 16px;
+	font-weight: normal;
+	text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+}
+
+tr:hover td {
+	background: #4e5066;
+	color: #ffffff;
+	border-top: 1px solid #22262e;
+}
+
+tr:first-child {
+	border-top: none;
+}
+
+tr:last-child {
+	border-bottom: none;
+}
+
+tr:nth-child(odd) td {
+	background: #ebebeb;
+}
+
+tr:nth-child(odd):hover td {
+	background: #4e5066;
+}
+
+tr:last-child td:first-child {
+	border-bottom-left-radius: 3px;
+}
+
+tr:last-child td:last-child {
+	border-bottom-right-radius: 3px;
+}
+
+td {
+	background: #ffffff;
+	padding: 20px;
+	text-align: left;
+	vertical-align: middle;
+	font-weight: 300;
+	font-size: 18px;
+	text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+	border-right: 1px solid #c1c3d1;
+}
+
+td:last-child {
+	border-right: 0px;
+}
+
+th.text-left {
+	text-align: left;
+}
+
+th.text-center {
+	text-align: center;
+}
+
+th.text-right {
+	text-align: right;
+}
+
+td.text-left {
+	text-align: left;
+}
+
+td.text-center {
+	text-align: center;
+}
+
+td.text-right {
+	text-align: right;
+}
