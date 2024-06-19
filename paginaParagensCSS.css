@@ -49,16 +49,16 @@ margin-left: 10vw;
 }
 
 /*---------------------------------------- Botão de Procura ----------------------------------------*/
-.button {
+.localizar {
 	width: 18vw;
 	height: 4vw;
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;
 	gap: 10px;
-	background-color: #acacac;
+	background: linear-gradient(to right, rgb(20, 30, 48), rgb(36, 59, 85));
 	border-radius: 30px;
-	color: rgb(19, 19, 19);
+	color: #ECECEC;
 	font-weight: 900;
 	font-size: 19px;
 	position: relative;
@@ -73,37 +73,65 @@ margin-left: 10vw;
     outline: none;
 }
 
-.button:focus {
+.localizar:focus {
     outline: none; /* Remover contorno */
+	box-shadow:none;
 }
 
 .svgIcon {
 	height: 3vw;
 	transition-duration: 1.5s;
+	fill: #dcdcdc;
 }
 
 .bell path {
-	fill: rgb(19, 19, 19);
+	fill: #acacac;
 }
 
-.button:hover {
-	background-color: #dcdcdc;
+.localizar:hover {
+	background: linear-gradient(to right, rgb(40, 50, 68), rgb(56, 79, 105));
 	transition-duration: .5s;
 }
 
-.button:active {
+.localizar:active {
 	transform: scale(0.97);
 	transition-duration: .2s;
 }
 
-.button:hover .svgIcon {
+.localizar:hover .svgIcon {
 	transform: rotate(250deg);
 	transition-duration: 1.5s;
 }
 
+/*---------------------------------------- Botão de voltar ----------------------------------------*/
 
-
-
+button {
+	color: #090909;
+	height: 3vw;
+	width: 6vw;
+	padding: 0.7em 1.7em;
+	font-size: 10vw;
+	border-radius: 0.5em;
+	background: #e8e8e8;
+	cursor: pointer;
+	border: 1px solid #e8e8e8;
+	transition: all 0.3s;
+	box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #fff;
+  }
+  
+  button:active {
+	color: #666;
+	box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #fff;
+  }
+  
+  #btnVoltar{
+	top: 1.5vw;
+	left: 1.5vw;
+	position: fixed;
+  }
+  #btnVoltar:focus{
+	outline: none; /* Remover contorno */
+  }
 
 
 
@@ -129,9 +157,9 @@ margin-left: 10vw;
 	box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
 	animation: float 5s infinite;
 	border-radius: 5px;
-  margin-top: 10vw;
-  margin-right: 55vw;
-  position: fixed;
+	margin-top: 10vw;
+	margin-right: 55vw;
+	position: fixed;
 }
 
 th {
