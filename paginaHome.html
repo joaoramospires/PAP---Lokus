@@ -35,11 +35,42 @@
 
 
     <script>
-        var map = L.map('map').setView([38.875309, -9.058013], 16);
+        // Verifica se o navegador suporta a API de Geolocalização
+        if(navigator.geolocation){
+            // Obtém a localização atual do usuário
+            navigator.geolocation.getCurrentPosition(function(position){
+                //obtém a posição do usuario
+                var lat = 38.875309;
+                var lon = -9.058013;
+                
+                //Puxa os dados do site
+                var map = L.map('map').setView([lat, lon], 16);
+                L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                }).addTo(map);
+                
+                // Cria um ícone personalizado
+                var customIcon = L.icon({
+                    iconUrl: 'localizacaoPonto.png',
+                    iconSize: [50, 50], // Tamanho do ícone
+                    iconAnchor: [19, 38], // Ponto de ancoragem do ícone (a ponta do pino)
+                    popupAnchor: [0, -38] // Ponto de ancoragem da popup em relação ao ícone
+                });
 
-        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
+                // Adiciona um marcador com o ícone personalizado na localização atual do usuário
+                var marker = L.marker([lat, lon], {icon: customIcon}).addTo(map)
+                    .openPopup();
+
+            }, function(error) {
+                // Caso ocorra um erro ao obter a localização
+                console.error("Erro ao obter a localização: ", error);
+            });
+        }
+        else{
+            console.error("Geolocalização não é suportada pelo seu navegador.");
+        }
+        
+
         
     </script>
     

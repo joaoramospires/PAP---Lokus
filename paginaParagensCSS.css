@@ -161,6 +161,9 @@ button {
 	margin-right: 55vw;
 	position: fixed;
 }
+.table-hover{
+	cursor: pointer;
+}
 
 th {
 	color: #d5dde5;
