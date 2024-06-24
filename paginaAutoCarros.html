@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <style>
-        #map,#map2{
+        #map, #map2{
         width: 45vw;
         height: 42.5vw;
         overflow: hidden;
@@ -24,7 +24,10 @@
         border-radius: 9px;
         box-shadow: 0px 10px 50px 10px #141223;
         padding: 2px;
-}
+    }
+    #mapTitulo, #mapTitulo2{
+        display: none;
+    }
     </style>
 </head>
 <body>
@@ -680,16 +683,16 @@
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map2);
 
         
-                // Cria um ícone personalizado
-                var customIcon = L.icon({
-                        iconUrl: 'localizacaoPonto.png',
-                        iconSize: [50, 50], // Tamanho do ícone
-                        iconAnchor: [25, 50], // Ponto de ancoragem do ícone (a ponta do pino)
-                        popupAnchor: [0, -50] // Ponto de ancoragem da popup em relação ao ícone
-                    });
-                    // Adiciona um marcador na localização do usuário
-                    var marker = L.marker([38.875309, -9.058013], {icon: customIcon}).addTo(map)
-                        .openPopup();
+        // Cria um ícone personalizado para o 1º Mapa -------------------
+        var customIcon = L.icon({
+            iconUrl: 'localizacaoPonto.png',
+            iconSize: [50, 50], // Tamanho do ícone
+            iconAnchor: [25, 50], // Ponto de ancoragem do ícone (a ponta do pino)
+            popupAnchor: [0, -50] // Ponto de ancoragem da popup em relação ao ícone
+        });
+        // Adiciona um marcador na localização do usuário
+        var marker = L.marker([38.875309, -9.058013], {icon: customIcon}).addTo(map).openPopup();
+        var marker2 = L.marker([38.875309, -9.058013], {icon: customIcon}).addTo(map2).openPopup();
 
 
         /*-----------------------------------------------------------------------------------------------------------------*/
