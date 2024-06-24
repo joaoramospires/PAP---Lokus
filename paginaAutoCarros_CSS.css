@@ -253,7 +253,7 @@ button:active {
 .card2:hover .car{
   width: 245px;
   right: 37vw;
-  top: 10.5vw;
+  top: 10vw;
   position:fixed;
   transition: all 0.3s ease-in-out;
   z-index: 2;
