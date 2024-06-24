@@ -14,25 +14,7 @@ body {
   -ms-user-select: none; /* IE 10+ */
   user-select: none; /* Não-prefixed version, Chrome and Opera */
 }
-/*---------------------------------------- MAPA ----------------------------------------*/
-.leaflet-marker-icon,
-.leaflet-marker-shadow {
-display: block !important;
-}
-
-
-.mapa{
-width: 45vw;
-height: 42.5vw;
-overflow: hidden;
-top: 7%; /* Ajusta a posição para baixo para cobrir o mapa */
-left: 52.5vw;
-position: fixed;
-margin-top: -1.3vw; 
-border-radius: 9px;
-box-shadow: 0px 10px 50px 10px #141223;
-padding: 2px;
-}
+/*---------------------------------------- Titulo ----------------------------------------*/
 
 .titulo{
   font-size: 30px;
